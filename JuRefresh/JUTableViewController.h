@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JUTableViewController.h
 //  JuRefresh
 //
 //  Created by Juvid on 2016/11/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface JUTableViewController : UITableViewController
 
 @end
-

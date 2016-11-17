@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		EBC318601DDD582600F042C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3185F1DDD582600F042C8 /* main.m */; };
 		EBC318631DDD582600F042C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318621DDD582600F042C8 /* AppDelegate.m */; };
-		EBC318661DDD582600F042C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318651DDD582600F042C8 /* ViewController.m */; };
 		EBC318691DDD582600F042C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC318671DDD582600F042C8 /* Main.storyboard */; };
 		EBC3186B1DDD582600F042C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC3186A1DDD582600F042C8 /* Assets.xcassets */; };
 		EBC3186E1DDD582600F042C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC3186C1DDD582600F042C8 /* LaunchScreen.storyboard */; };
+		EBC3187F1DDD58D900F042C8 /* JuRefreshBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318781DDD58D900F042C8 /* JuRefreshBase.m */; };
+		EBC318801DDD58D900F042C8 /* JuRefreshFoot.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3187A1DDD58D900F042C8 /* JuRefreshFoot.m */; };
+		EBC318811DDD58D900F042C8 /* JuRefreshHead.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3187C1DDD58D900F042C8 /* JuRefreshHead.m */; };
+		EBC318821DDD58D900F042C8 /* UIScrollView+JuRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3187E1DDD58D900F042C8 /* UIScrollView+JuRefresh.m */; };
+		EBC3189E1DDD59B500F042C8 /* JuLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318951DDD59B500F042C8 /* JuLayout.m */; };
+		EBC3189F1DDD59B500F042C8 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318971DDD59B500F042C8 /* UIView+Frame.m */; };
+		EBC318A01DDD59B500F042C8 /* UIView+JuConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318991DDD59B500F042C8 /* UIView+JuConstraint.m */; };
+		EBC318A11DDD59B500F042C8 /* UIView+JuLayGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3189B1DDD59B500F042C8 /* UIView+JuLayGroup.m */; };
+		EBC318A21DDD59B500F042C8 /* UIView+JuLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC3189D1DDD59B500F042C8 /* UIView+JuLayout.m */; };
+		EBC318A51DDD59E100F042C8 /* JUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC318A41DDD59E100F042C8 /* JUTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +29,31 @@
 		EBC3185F1DDD582600F042C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EBC318611DDD582600F042C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EBC318621DDD582600F042C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EBC318641DDD582600F042C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EBC318651DDD582600F042C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EBC318681DDD582600F042C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBC3186A1DDD582600F042C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBC3186D1DDD582600F042C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBC3186F1DDD582600F042C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC318761DDD58D900F042C8 /* JuRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuRefresh.h; sourceTree = "<group>"; };
+		EBC318771DDD58D900F042C8 /* JuRefreshBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuRefreshBase.h; sourceTree = "<group>"; };
+		EBC318781DDD58D900F042C8 /* JuRefreshBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuRefreshBase.m; sourceTree = "<group>"; };
+		EBC318791DDD58D900F042C8 /* JuRefreshFoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuRefreshFoot.h; sourceTree = "<group>"; };
+		EBC3187A1DDD58D900F042C8 /* JuRefreshFoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuRefreshFoot.m; sourceTree = "<group>"; };
+		EBC3187B1DDD58D900F042C8 /* JuRefreshHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuRefreshHead.h; sourceTree = "<group>"; };
+		EBC3187C1DDD58D900F042C8 /* JuRefreshHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuRefreshHead.m; sourceTree = "<group>"; };
+		EBC3187D1DDD58D900F042C8 /* UIScrollView+JuRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JuRefresh.h"; sourceTree = "<group>"; };
+		EBC3187E1DDD58D900F042C8 /* UIScrollView+JuRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JuRefresh.m"; sourceTree = "<group>"; };
+		EBC318941DDD59B500F042C8 /* JuLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JuLayout.h; sourceTree = "<group>"; };
+		EBC318951DDD59B500F042C8 /* JuLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JuLayout.m; sourceTree = "<group>"; };
+		EBC318961DDD59B500F042C8 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		EBC318971DDD59B500F042C8 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		EBC318981DDD59B500F042C8 /* UIView+JuConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JuConstraint.h"; sourceTree = "<group>"; };
+		EBC318991DDD59B500F042C8 /* UIView+JuConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JuConstraint.m"; sourceTree = "<group>"; };
+		EBC3189A1DDD59B500F042C8 /* UIView+JuLayGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JuLayGroup.h"; sourceTree = "<group>"; };
+		EBC3189B1DDD59B500F042C8 /* UIView+JuLayGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JuLayGroup.m"; sourceTree = "<group>"; };
+		EBC3189C1DDD59B500F042C8 /* UIView+JuLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JuLayout.h"; sourceTree = "<group>"; };
+		EBC3189D1DDD59B500F042C8 /* UIView+JuLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JuLayout.m"; sourceTree = "<group>"; };
+		EBC318A31DDD59E100F042C8 /* JUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUTableViewController.h; sourceTree = "<group>"; };
+		EBC318A41DDD59E100F042C8 /* JUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +86,12 @@
 		EBC3185D1DDD582600F042C8 /* JuRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				EBC318931DDD59B500F042C8 /* Layout */,
+				EBC318751DDD58D900F042C8 /* JuRefresh */,
 				EBC318611DDD582600F042C8 /* AppDelegate.h */,
 				EBC318621DDD582600F042C8 /* AppDelegate.m */,
-				EBC318641DDD582600F042C8 /* ViewController.h */,
-				EBC318651DDD582600F042C8 /* ViewController.m */,
+				EBC318A31DDD59E100F042C8 /* JUTableViewController.h */,
+				EBC318A41DDD59E100F042C8 /* JUTableViewController.m */,
 				EBC318671DDD582600F042C8 /* Main.storyboard */,
 				EBC3186A1DDD582600F042C8 /* Assets.xcassets */,
 				EBC3186C1DDD582600F042C8 /* LaunchScreen.storyboard */,
@@ -77,6 +107,39 @@
 				EBC3185F1DDD582600F042C8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBC318751DDD58D900F042C8 /* JuRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				EBC318761DDD58D900F042C8 /* JuRefresh.h */,
+				EBC318771DDD58D900F042C8 /* JuRefreshBase.h */,
+				EBC318781DDD58D900F042C8 /* JuRefreshBase.m */,
+				EBC318791DDD58D900F042C8 /* JuRefreshFoot.h */,
+				EBC3187A1DDD58D900F042C8 /* JuRefreshFoot.m */,
+				EBC3187B1DDD58D900F042C8 /* JuRefreshHead.h */,
+				EBC3187C1DDD58D900F042C8 /* JuRefreshHead.m */,
+				EBC3187D1DDD58D900F042C8 /* UIScrollView+JuRefresh.h */,
+				EBC3187E1DDD58D900F042C8 /* UIScrollView+JuRefresh.m */,
+			);
+			path = JuRefresh;
+			sourceTree = "<group>";
+		};
+		EBC318931DDD59B500F042C8 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				EBC318941DDD59B500F042C8 /* JuLayout.h */,
+				EBC318951DDD59B500F042C8 /* JuLayout.m */,
+				EBC318961DDD59B500F042C8 /* UIView+Frame.h */,
+				EBC318971DDD59B500F042C8 /* UIView+Frame.m */,
+				EBC318981DDD59B500F042C8 /* UIView+JuConstraint.h */,
+				EBC318991DDD59B500F042C8 /* UIView+JuConstraint.m */,
+				EBC3189A1DDD59B500F042C8 /* UIView+JuLayGroup.h */,
+				EBC3189B1DDD59B500F042C8 /* UIView+JuLayGroup.m */,
+				EBC3189C1DDD59B500F042C8 /* UIView+JuLayout.h */,
+				EBC3189D1DDD59B500F042C8 /* UIView+JuLayout.m */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +213,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC318661DDD582600F042C8 /* ViewController.m in Sources */,
+				EBC318801DDD58D900F042C8 /* JuRefreshFoot.m in Sources */,
+				EBC3189E1DDD59B500F042C8 /* JuLayout.m in Sources */,
+				EBC3189F1DDD59B500F042C8 /* UIView+Frame.m in Sources */,
+				EBC318A51DDD59E100F042C8 /* JUTableViewController.m in Sources */,
 				EBC318631DDD582600F042C8 /* AppDelegate.m in Sources */,
 				EBC318601DDD582600F042C8 /* main.m in Sources */,
+				EBC318A11DDD59B500F042C8 /* UIView+JuLayGroup.m in Sources */,
+				EBC318811DDD58D900F042C8 /* JuRefreshHead.m in Sources */,
+				EBC3187F1DDD58D900F042C8 /* JuRefreshBase.m in Sources */,
+				EBC318A21DDD59B500F042C8 /* UIView+JuLayout.m in Sources */,
+				EBC318A01DDD59B500F042C8 /* UIView+JuConstraint.m in Sources */,
+				EBC318821DDD58D900F042C8 /* UIScrollView+JuRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JuRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wbitech.JuRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JuRefresh/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wbitech.JuRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
