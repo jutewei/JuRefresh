@@ -3,14 +3,14 @@
 //  JuRefresh
 //
 //  Created by Juvid on 16/9/1.
-//  Copyright © 2016年 Juvid. All rights reserved.
+//  Copyright © 2016年 Juvid(zhutianwei). All rights reserved.
 //
 
 #import "JuRefreshBase.h"
 
-@interface JuRefreshHead : JuRefreshBase{
-    BOOL isBeginRefresh;///< 即将开始刷新
-}
+@interface JuRefreshHead : JuRefreshBase
+
++(instancetype)juHeadWithhandle:(dispatch_block_t)handle;
 
 -(void)juStartRefresh;
 -(void)juEndRefresh;

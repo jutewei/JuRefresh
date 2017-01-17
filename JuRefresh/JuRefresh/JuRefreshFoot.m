@@ -3,12 +3,18 @@
 //  JuRefresh
 //
 //  Created by Juvid on 16/9/7.
-//  Copyright © 2016年 Juvid. All rights reserved.
+//  Copyright © 2016年 Juvid(zhutianwei). All rights reserved.
 //
 
 #import "JuRefreshFoot.h"
-//#import "UIView+JuLayout.h"
+#import "UIView+JuLayout.h"
 #define LoadFootH 44
+
+@interface JuRefreshFoot ()
+@property (nonatomic,copy  ) shLoadNextPage ju_LoadMore;//开始刷新
+@property (nonatomic,assign) JuLoadStatus ju_LoadStatus;
+@end
+
 
 @implementation JuRefreshFoot
 @synthesize ju_LoadStatus;
@@ -18,6 +24,13 @@
     self.labTitle.text=JuLoadMoreSuccess;
     self.hidden=YES;
 }
+
++(instancetype)juFootWithhandle:(shLoadNextPage)handle{
+    JuRefreshFoot *refresh=[[self alloc]init];
+    refresh.ju_LoadMore=handle;
+    return refresh;
+}
+
 -(void)juLoadMoreStatus:(JuLoadStatus)status{
     if (!scrollView) return;
     self.hidden=NO;
@@ -26,9 +39,6 @@
         case JuLoadStatusIng:{
             self.labTitle.text=JuLoadMoreIng;
             [self.loadingAni startAnimating];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                [self juLoadMoreStatus:JuLoadStatusFinish];
-//            });
         }
             break;
         case JuLoadStatusFinish:{
@@ -49,31 +59,27 @@
         default:
             break;
     }
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self juSetScrollInset];
-//    });
+
+    [self juSetScrollInset:10000];
 
 }
 /**自动刷新使用*/
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
-    if(scrollView.decelerating){
-        [self juSetScrollInset];
+//    scrollView.contentOffset.y>=(scrollView.contentSize.height-scrollView.frame.size.height)||
+    if(scrollView.contentOffset.y>=scrollView.contentSize.height-scrollView.frame.size.height-80&&(int)(self.frame.origin.y)!=(int)(scrollView.contentSize.height)){
+        [self juSetScrollInset:0];
     }
-    if (self.ju_LoadMore&&!self.hidden) {
-        if(scrollView.isDragging&&scrollView.contentOffset.y>=scrollView.contentSize.height-scrollView.frame.size.height&&scrollView.contentOffset.y>0){
-            if (self.ju_LoadStatus==JuLoadStatusIng||self.ju_LoadStatus==JuLoadStatusFinish) return;
-            else {
-                if (self.ju_LoadStatus==JuLoadStatusSuccess) {
-                     self.ju_LoadMore(@"1");
-                }else{
-                    self.ju_LoadMore(@"2");
-                }
-            }
-        }
+    if (_isAutoLoad) {
+        [self juDidLoadMore];
     }
 }
--(void)juSetScrollInset{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+-(void)juSetScrollInset:(BOOL)estimatedHight{
+    static BOOL isBusy=NO;
+    if (isBusy) return;///< 防止重复执行
+
+    isBusy=YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
         CGRect selfFrame=self.frame;
         UIEdgeInsets insets= scrollView.contentInset;
         CGFloat bottom=LoadFootH;
@@ -84,6 +90,7 @@
         }else{
             selfFrame.origin.y=scrollView.contentSize.height;
         }
+        selfFrame.origin.y+=estimatedHight;
         self.frame=selfFrame;
         if(isFirstConfig){
             if (insets.bottom!=bottom&&(insets.bottom>=0&&insets.bottom<=44)) {
@@ -91,9 +98,29 @@
                 scrollView.contentInset=insets;
             }
         }
+        isBusy=NO;
     });
 }
 
+/**
+ 开始加载更多
+ */
+-(void)juDidLoadMore{
+    if (self.ju_LoadMore&&!self.hidden&&scrollView.contentOffset.y>=scrollView.contentSize.height-scrollView.frame.size.height&&scrollView.contentOffset.y>0) {
+        JuLoadStatus loadStatus=self.ju_LoadStatus;
+        if (loadStatus==JuLoadStatusIng||loadStatus==JuLoadStatusFinish) return;
+        else {
+            [self juLoadMoreStatus:JuLoadStatusIng];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{///< 刷新延迟
+                if (loadStatus==JuLoadStatusSuccess) {
+                    self.ju_LoadMore(YES);
+                }else{
+                    return  self.ju_LoadMore(NO);
+                }
+            });
+        }
+    }
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

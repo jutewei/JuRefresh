@@ -3,25 +3,25 @@
 //  JuRefresh
 //
 //  Created by Juvid on 16/9/7.
-//  Copyright © 2016年 Juvid. All rights reserved.
+//  Copyright © 2016年 Juvid(zhutianwei). All rights reserved.
 //
 
 #import "JuRefreshBase.h"
 #import "UIView+JuLayGroup.h"
 @implementation JuRefreshBase
-+(instancetype)juHeadWithhandle:(dispatch_block_t)handle{
-    JuRefreshBase *refresh=[[self alloc]init];
-    refresh.ju_StartRefresh=handle;
-    return refresh;
-}
-+(instancetype)juFootWithhandle:(JuHandleData)handle{
-    JuRefreshBase *refresh=[[self alloc]init];
-    refresh.ju_LoadMore=handle;
-    return refresh;
-}
-+(instancetype)juFoot{
-    return [self juFootWithhandle:nil];
-}
+//+(instancetype)juHeadWithhandle:(dispatch_block_t)handle{
+//    JuRefreshBase *refresh=[[self alloc]init];
+//    refresh.ju_StartRefresh=handle;
+//    return refresh;
+//}
+//+(instancetype)juFootWithhandle:(shLoadNextPage)handle{
+//    JuRefreshBase *refresh=[[self alloc]init];
+//    refresh.ju_LoadMore=handle;
+//    return refresh;
+//}
+//+(instancetype)juFoot{
+//    return [self juFootWithhandle:nil];
+//}
 -(instancetype)init{
     self=[super init];
     if (self) {
@@ -76,7 +76,7 @@
     _loadingAni.hidesWhenStopped=YES;
     _loadingAni.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [self addSubview:_loadingAni];
-    _loadingAni.juTraSpace.toView(_labTitle).equal(-10);
+    _loadingAni.juTraSpace.toView(_labTitle).equal(10);
     _loadingAni.juCenterY.equal(0);
 
 }

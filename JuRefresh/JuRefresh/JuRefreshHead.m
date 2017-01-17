@@ -3,7 +3,7 @@
 //  JuRefresh
 //
 //  Created by Juvid on 16/9/1.
-//  Copyright © 2016年 Juvid. All rights reserved.
+//  Copyright © 2016年 Juvid(zhutianwei). All rights reserved.
 //
 
 #import "JuRefreshHead.h"
@@ -11,12 +11,20 @@
 #define InsetH 65
 #define RefreshH 64
 @interface JuRefreshHead (){
+    BOOL isBeginRefresh;///< 即将开始刷新
     UIImageView *imageView;
     BOOL isRefreshing;
 }
+@property (nonatomic,copy  ) dispatch_block_t ju_StartRefresh;//开始刷新
 @end
 
 @implementation JuRefreshHead
+
++(instancetype)juHeadWithhandle:(dispatch_block_t)handle{
+    JuRefreshHead *refresh=[[self alloc]init];
+    refresh.ju_StartRefresh=handle;
+    return refresh;
+}
 
 -(void)juSetView{
     [super juSetView];
@@ -26,7 +34,7 @@
     imageView.image=[UIImage imageNamed:@"arrow"];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self addSubview:imageView];
-    imageView.juTraSpace.toView(self.labTitle).equal(-20);
+    imageView.juTraSpace.toView(self.labTitle).equal(20);
     imageView.juCenterY.equal(0);
 
 }

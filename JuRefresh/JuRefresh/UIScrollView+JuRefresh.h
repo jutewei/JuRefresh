@@ -3,21 +3,21 @@
 //  JuRefresh
 //
 //  Created by Juvid on 16/9/7.
-//  Copyright © 2016年 Juvid. All rights reserved.
+//  Copyright © 2016年 Juvid(zhutianwei). All rights reserved.
 //
 
 #import "JuRefreshFoot.h"
 #import "JuRefreshHead.h"
 
-typedef NS_ENUM(NSInteger,JuLoadPageType) {
-    JuLoadPageNone,
-    JuLoadPageNext,
-    JuLoadPageCurrent,
-};
+//typedef NS_ENUM(NSInteger,JuLoadPageType) {
+//    JuLoadPageNone,
+//    JuLoadPageNext,
+//    JuLoadPageCurrent,
+//};
 @interface UIScrollView (JuRefresh)
 
-@property (nonatomic,strong) JuRefreshHead *ju_RefreshHead;///< 全部约束
-@property (nonatomic,strong) JuRefreshFoot *ju_RefreshFoot;///< 全部约束
+@property (nonatomic,strong) JuRefreshHead *ju_RefreshHead;///< 下拉刷新
+@property (nonatomic,strong) JuRefreshFoot *ju_RefreshFoot;///< 上拉加载更多
 
--(JuLoadPageType)juLoadMorePage;
+//-(JuLoadPageType)juLoadMorePage;
 @end
