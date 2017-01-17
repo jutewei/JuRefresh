@@ -18,17 +18,18 @@
 
 @implementation JuRefreshFoot
 @synthesize ju_LoadStatus;
--(void)juSetView{
-    [super juSetView];
-    self.frame=CGRectMake(0, scrollView.contentSize.height, [[UIScreen mainScreen] bounds].size.width, LoadFootH);
-    self.labTitle.text=JuLoadMoreSuccess;
-    self.hidden=YES;
-}
 
 +(instancetype)juFootWithhandle:(shLoadNextPage)handle{
     JuRefreshFoot *refresh=[[self alloc]init];
     refresh.ju_LoadMore=handle;
     return refresh;
+}
+
+-(void)juSetView{
+    [super juSetView];
+    self.frame=CGRectMake(0, scrollView.contentSize.height, [[UIScreen mainScreen] bounds].size.width, LoadFootH);
+    self.labTitle.text=JuLoadMoreSuccess;
+    self.hidden=YES;
 }
 
 -(void)juLoadMoreStatus:(JuLoadStatus)status{

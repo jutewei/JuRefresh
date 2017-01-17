@@ -9,19 +9,7 @@
 #import "JuRefreshBase.h"
 #import "UIView+JuLayGroup.h"
 @implementation JuRefreshBase
-//+(instancetype)juHeadWithhandle:(dispatch_block_t)handle{
-//    JuRefreshBase *refresh=[[self alloc]init];
-//    refresh.ju_StartRefresh=handle;
-//    return refresh;
-//}
-//+(instancetype)juFootWithhandle:(shLoadNextPage)handle{
-//    JuRefreshBase *refresh=[[self alloc]init];
-//    refresh.ju_LoadMore=handle;
-//    return refresh;
-//}
-//+(instancetype)juFoot{
-//    return [self juFootWithhandle:nil];
-//}
+
 -(instancetype)init{
     self=[super init];
     if (self) {
@@ -29,9 +17,7 @@
     }
     return self;
 }
-//-(void)dealloc{
-//    [scrollView removeObserver:self forKeyPath:@"contentOffset"];
-//}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     // 遇到这些情况就直接返回

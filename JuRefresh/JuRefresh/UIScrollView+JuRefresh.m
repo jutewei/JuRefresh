@@ -40,19 +40,5 @@ static const char* juLoadMore="load_more";;
     return objc_getAssociatedObject(self, @selector(ju_RefreshHead));
 }
 
-//-(JuLoadPageType)juLoadMorePage{
-//    if (self.ju_RefreshFoot&&!self.ju_RefreshFoot.hidden&&self.contentOffset.y>=self.contentSize.height-self.frame.size.height&&self.contentOffset.y>0) {
-//        if (self.ju_RefreshFoot.ju_LoadStatus==JuLoadStatusIng||self.ju_RefreshFoot.ju_LoadStatus==JuLoadStatusFinish) return JuLoadPageNone;
-//        else {
-//
-//            if (self.ju_RefreshFoot.ju_LoadStatus==JuLoadStatusSuccess) {
-//                return JuLoadPageNext;
-//            }else{
-//                return JuLoadPageCurrent;
-//            }
-//
-//        }
-//    }
-//    return JuLoadPageNone;
-//}
+
 @end
