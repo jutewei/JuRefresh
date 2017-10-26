@@ -8,7 +8,7 @@
 
 #import "JuRefreshHead.h"
 #import "UIView+JuLayGroup.h"
-#define InsetH 65
+#define InsetH   65  //(MAX(20,[[UIApplication sharedApplication] statusBarFrame].size.height)+45)
 #define RefreshH 64
 @interface JuRefreshHead (){
     BOOL isBeginRefresh;///< 即将开始刷新
@@ -36,7 +36,7 @@
     [self addSubview:imageView];
     imageView.juTraSpace.toView(self.labTitle).equal(20);
     imageView.juCenterY.equal(0);
-
+    
 }
 
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
@@ -52,8 +52,9 @@
 }
 -(void)didMoveToWindow{
     [super didMoveToWindow];
-    [self juDidRefresh];
-    isBeginRefresh=NO;
+    if (self.window) {
+        [self juDidRefresh];
+    }
 }
 -(void)juWillRefresh:(CGPoint)contentOffset{
     if (isRefreshing) return;
@@ -66,27 +67,29 @@
 }
 -(void)juDidRefresh{
     if (!scrollView||self.hidden) return;
-
+    
     if (!self.window||!isBeginRefresh) return;
-
+    
     ju_RefreshOffsetH=RefreshH;
     isRefreshing=YES;
-
+    
     UIEdgeInsets contentInset= scrollView.contentInset;
     contentInset.top=ju_RefreshOffsetH+ju_InsetTop;
     [self.loadingAni startAnimating];
     imageView.hidden=isRefreshing;
     self.labTitle.text=JuRefreshIng;
-
+    
     [UIView animateWithDuration:.3 animations:^{
         scrollView.contentInset = contentInset;
+        [scrollView setContentOffset:CGPointMake(0, -contentInset.top)];
     } completion:^(BOOL finished) {
-
+        
     }];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if(self.ju_StartRefresh)  self.ju_StartRefresh();
     });
+    isBeginRefresh=NO;
 }
 -(void)juStartRefresh{
     isBeginRefresh=YES;
@@ -96,6 +99,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         UIEdgeInsets contentInset= scrollView.contentInset;
         contentInset.top=ju_InsetTop;
+        
         [UIView animateWithDuration:0.35 animations:^{
             scrollView.contentInset=contentInset;
         } completion:^(BOOL finished) {
@@ -111,14 +115,15 @@
     [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         imageView.transform = endAngle;
     } completion:^(BOOL finished) {}];
-
+    
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end
+
